@@ -3,12 +3,20 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "gulp dev",
+    "build": "gulp build"
   },
-  "author": "",
+  "repository": "https://github.com/SugarSyrup/scss-css-Learning",
+  "author": "SugarSyrup",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "@babel/register": "^7.18.9",
+    "gulp": "^4.0.2",
+    "gulp-pug": "^5.0.0"
+  },
+  "dependencies": {
+    "del": "^7.0.0"
   }
 }
