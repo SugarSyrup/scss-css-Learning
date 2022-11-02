@@ -5,8 +5,8 @@ import {deleteAsync} from 'del';
 
 const routes = {
     pug: {
+        watch:"src/**/*.pug",
         src: "src/*.pug",
-        //src: "src/**/*.pug"
         dest: "build"
     }
 }
@@ -18,9 +18,12 @@ const pug = () => gulp.src(routes.pug.src).pipe(gulp_pug()).pipe(gulp.dest(route
 const clean = async () => await deleteAsync(["build"]);
 
 const webserver = () => gulp.src("build").pipe(ws({livereload:true, open:true}));
+const watch = () => {
+    gulp.watch(routes.pug.watch, pug);
+}
 
 const prepare = gulp.series([clean]);
 const assets = gulp.series([pug]);
-const postDev = gulp.series([webserver])
+const postDev = gulp.parallel([webserver, watch]);
 
 export const dev = gulp.series([prepare, assets, postDev]);
