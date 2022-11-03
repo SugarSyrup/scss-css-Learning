@@ -11,13 +11,24 @@
   "repository": "https://github.com/SugarSyrup/scss-css-Learning",
   "author": "SugarSyrup",
   "license": "ISC",
+  "browserslist": [
+    "last 2 versions"
+  ],
   "devDependencies": {
     "@babel/register": "^7.18.9",
     "gulp": "^4.0.2",
+    "gulp-bro": "^2.0.0",
     "gulp-pug": "^5.0.0",
-    "gulp-webserver": "^0.9.1"
+    "gulp-sass": "^5.1.0",
+    "gulp-webserver": "^0.9.1",
+    "node-sass": "^7.0.3"
   },
   "dependencies": {
-    "del": "^7.0.0"
+    "babelify": "^10.0.0",
+    "del": "^7.0.0",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-image": "^6.3.1",
+    "uglifyify": "^5.0.2"
   }
 }
