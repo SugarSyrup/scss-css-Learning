@@ -7,6 +7,7 @@ import node_sass from 'node-sass';
 import autoPrefixer from 'gulp-autoprefixer';
 import miniCss from 'gulp-csso';
 import brom from "gulp-bro";
+import ghPages from 'gulp-gh-pages';
 import babelify from "babelify";
 
 import {deleteAsync} from 'del';
@@ -61,8 +62,12 @@ const js = () => gulp.src(routes.js.src).pipe(brom({
     }).pipe(gulp.dest(routes.js.dest))
 );
 
+const gitPages = () => gulp.src('./build/**/*').pipe(ghPages());
+
 const prepare = gulp.series([clean, img]);
 const assets = gulp.series([pug, styles, js]);
 const postDev = gulp.parallel([webserver, watch]);
 
-export const dev = gulp.series([prepare, assets, postDev]);
+export const build = gulp.series([prepare, assets]);
+export const dev = gulp.series([build, postDev]);
+export const deploy = gulp.series([build, gitPages, clean]);

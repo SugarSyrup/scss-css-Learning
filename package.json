@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "gulp dev",
-    "build": "gulp build"
+    "build": "gulp build",
+    "deploy": "gulp deploy"
   },
   "repository": "https://github.com/SugarSyrup/scss-css-Learning",
   "author": "SugarSyrup",
@@ -18,6 +19,7 @@
     "@babel/register": "^7.18.9",
     "gulp": "^4.0.2",
     "gulp-bro": "^2.0.0",
+    "gulp-gh-pages": "^0.5.4",
     "gulp-pug": "^5.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-webserver": "^0.9.1",
